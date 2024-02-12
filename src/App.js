@@ -6,12 +6,12 @@ import {
   Link,Switch
 } from "react-router-dom";
 import About from './Components/About';
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import axios from 'axios'
-import About1 from './Components/About1';
 import Users from './Components/Users';
 import Search from './Components/Search';
 import Userdetails from './Components/Userdetails';
+
 
 function App() {
   const[users, SetUsers]=useState([]);
@@ -20,7 +20,7 @@ function App() {
   
   const searchName = async (text) => {
     const res = await axios.get(`https://api.github.com/search/users?q=${text}`);
-    console.log(res);
+    
     SetUsers(res.data.items)
   }
   const clearUser=()=>{
@@ -33,7 +33,7 @@ function App() {
  }
 
  const getRepo= async(username)=>{
-  const res= await axios.get(`https://api.github.com/users/${username}/repos?5per_page=57sort=asc`)
+  const res= await axios.get(`https://api.github.com/users/${username}/repos?per_page=5&sort=asc`)
   SetRepos(res.data)
 
  }
@@ -60,6 +60,7 @@ function App() {
         props=>(<Userdetails getDetails={getDetails} user1={user1} {...props} getRepo={getRepo} repos={repos}/>)
       }></Route>
       </Switch>
+
       </div>
       </Router>
     

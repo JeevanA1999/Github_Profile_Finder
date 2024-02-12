@@ -32,7 +32,7 @@ function Userdetails(props) {
                 <p>{bio}</p>
                 </>
             )}
-            <a href={html_url} className="btn btn-dark my-1">Visit Github profile</a>
+            <a href={html_url} className="btn btn-dark my-1" target="blank">Visit Github profile</a>
             <ul>
                 <li>
                     {company && (

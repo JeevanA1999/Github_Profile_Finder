@@ -15,7 +15,7 @@ function Search(props) {
   return (
     <>
     <form className='form' onSubmit={handleSearch}>
-        <input type='text' placeholder='Search Here' value={text} onChange={(e)=>{SetText(e.target.value)}} />
+        <input type='text' placeholder='Search GitHub Username' value={text} onChange={(e)=>{SetText(e.target.value)}} required />
         <input type='submit' placeholder='Search'className="btn btn-dark btn-block"/>
     </form>
     {props.showClear && <button type='submit' className='btn btn-light btn-block' onClick={props.clearUser}>Clear</button> }

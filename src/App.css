@@ -7,8 +7,19 @@
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
+  ---background-color:#fff;
+  --text-color:#333;
 }
 
+[data-theme='dark']{
+  --primary-color: #0c0962;
+  --dark-color: #efe9e9;
+  --light-color: #f4f4f4;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+  --background-color:#000;
+  --text-color:#ece3e3;
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,7 +30,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
+  background-color:var(---background-color);
   color: #333;
 }
 
@@ -111,6 +122,7 @@ img {
 
 /* Cards */
 .card {
+  text-align: center;
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;

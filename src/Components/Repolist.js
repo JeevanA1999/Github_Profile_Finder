@@ -1,16 +1,25 @@
-import React from 'react'
-import Repo from './Repo'
+import React from "react";
+import Repo from "./Repo";
 
 function Repolist(props) {
   return (
     <div>
-      {
-        props.repos.map((repo)=>{
-            <Repo repo={repo}/>
-        })
-      }
+      {/* <p>{JSON.stringify(props?.repos)}</p>
+     {console.log(props?.repos,"swas")} */}
+
+     {
+      props.repos.map((item,index)=>{
+        return <div><Repo key={index} repo={item}/></div>
+      })
+     }
+     {/* <div>
+      {props?.repos?.map((item,index)=>{
+        return <div><Repo key={index} repo={item}/></div>
+      })}
+     </div> */}
+
     </div>
-  )
+  );
 }
 
-export default Repolist
+export default Repolist;
